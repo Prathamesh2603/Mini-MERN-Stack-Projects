@@ -1,7 +1,7 @@
 // External Module
 const { default: mongoose } = require("mongoose");
 
-const MONGO_URI = "mongodb+srv://rahulrp3663_db_user:root@practicecluster.uhjdpsz.mongodb.net/todo?appName=practiceCluster";
+const MONGO_URI = process.env.MONGO_URI;
 
 const connectDB = async () => {
   try {
