@@ -36,13 +36,13 @@ exports.postRegister = [
   .isString()
   .trim(),
 
-  check("confirmPassword")
-  .custom((val, {req}) => {
-    if (val !== req.body.password) {
-      throw new Error("Password do not match.");
-    }
-    return true;
-  }),
+  // check("confirmPassword")
+  // .custom((val, {req}) => {
+  //   if (val !== req.body.password) {
+  //     throw new Error("Password do not match.");
+  //   }
+  //   return true;
+  // }),
 
   async (req, res, next) => {
     try {
