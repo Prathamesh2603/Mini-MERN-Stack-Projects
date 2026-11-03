@@ -4,6 +4,7 @@ const express = require("express");
 // Local Module
 const authMiddleware = require("../middleware/authMiddleware");
 const roleMiddleware = require("../middleware/roleMiddleware");
+const adminController = require("../controllers/adminController");
 const protectedRoutes = express.Router();
 
 // Any authenticated user can access this endpoint.
@@ -21,11 +22,6 @@ protectedRoutes.get("/dashboard", authMiddleware, (req, res) => {
 });
 
 // Only admins can access this end-point.
-protectedRoutes.get("/admin", authMiddleware, roleMiddleware("admin"), (req, res) => {
-  return res.status(200).json({
-    success: true, 
-    message: "Welcome to the admin dashboard."
-  });
-});
+protectedRoutes.get("/admin", authMiddleware, roleMiddleware("admin"), adminController.getAdminDashboard);
 
 module.exports = protectedRoutes;
