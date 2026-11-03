@@ -46,5 +46,5 @@ export const api = {
 
   dashboard: () => request("/dashboard"), 
 
-  adminDashboard: () => request("/admin") 
+  adminDashboard: (search = "") => request(`/admin?search=${encodeURIComponent(search)}`) 
 };
