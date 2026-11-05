@@ -62,15 +62,15 @@ const Login = () => {
               <p className="mb-2 text-sm font-semibold text-indigo-600">
                 WELCOME BACK
               </p>
-            </div>
 
-            <h2 className="text-3xl font-bold text-slate-900">
-              Sign in to your account
-            </h2>
-            
-            <p className="mt-2 text-sm text-slate-500">
-              Enter your credentials to access your dashboard.
-            </p>
+              <h2 className="text-3xl font-bold text-slate-900">
+                Sign in to your account
+              </h2>
+              
+              <p className="mt-2 text-sm text-slate-500">
+                Enter your credentials to access your dashboard.
+              </p>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
@@ -130,7 +130,10 @@ const Login = () => {
             </form>
 
             <p className="mt-8 text-center text-sm text-slate-500">
-              Don't have an account? <Link to="/register">Create account</Link>
+              Don't have an account?{" "}
+              <Link to="/register" className="font-semibold text-indigo-600 hover:text-indigo-700">
+                Create account
+              </Link>
             </p>
 
           </div>
